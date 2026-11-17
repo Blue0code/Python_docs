@@ -30,35 +30,35 @@ if errorlevel 2 (
     start /min "DocumentaryServer" py -m http.server 8000
     timeout /t 1 >nul
     echo Baslatiliyor... [7]
-    echo | | | |
+    echo " | | | | "
     timeout /t 1 >nul
     cls
     echo Baslatiliyor... [6]
-    echo / / / /
+    echo " / / / / "
     timeout /t 1 >nul
     cls
     echo Baslatiliyor... [5]
-    echo - - - -
+    echo " - - - - "
     timeout /t 1 >nul
     cls
     echo Baslatiliyor... [4]
-    echo \ \ \ \
+    echo " \ \ \ \ "
     timeout /t 1 >nul
     cls
     echo Baslatiliyor... [3]
-    echo | | | |
+    echo " | | | | "
     timeout /t 1 >nul
     cls
     echo Baslatiliyor... [2]
-    echo / / / /
+    echo " / / / / "
     timeout /t 1 >nul
     cls
     echo Baslatiliyor... [1]
-    echo - - - -
+    echo " - - - - "
     timeout /t 1 >nul
     cls
     echo Baslatiliyor... [0]
-    echo \ \ \ \
+    echo " - - - - "
     start "PythonDocs" "http://localhost:8000/index.html"
 goto bts
 )
@@ -81,6 +81,5 @@ if errorlevel 1 (
 cls
 echo /.../
 echo Sunucuyu kapatmak istediginiz zaman herhangi bir tusa basmaniz yeterlidir...
-powershell -Command "$chars='|/-\'; $i=0; while(-not [Console]::KeyAvailable) { [Console]::Write(\"`r Calisiyor... \" + $chars[$i++ % $chars.Length]); Start-Sleep -Milliseconds 100 }; $null = [Console]::ReadKey($true)"
-taskkill /f /fi "windowtitle eq DocumentaryServer" /t >nul 2>&1
+powershell -Command "$chars='|/-\\'; $i=0; while(-not [Console]::KeyAvailable) { [Console]::Write(\"`r Calisiyor... \" + $chars[$i++ %% $chars.Length]); Start-Sleep -Milliseconds 100 }; $null = [Console]::ReadKey($true)"taskkill /f /fi "windowtitle eq DocumentaryServer" /t >nul 2>&1
 goto bsl
