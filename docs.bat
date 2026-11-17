@@ -1,5 +1,6 @@
 @echo off
 cls
+color 0A
 title Python_Docs
 cd /d "%~dp0"
 echo.
@@ -20,6 +21,7 @@ echo #########   ########   ########   ########
 echo.
 pause
 :bsl
+color 0F
 echo.
 echo /.../
 echo [Y] Evet
@@ -80,6 +82,9 @@ if errorlevel 1 (
 :bts
 cls
 echo /.../
-echo Sunucuyu kapatmak istediginiz zaman herhangi bir tusa basmaniz yeterlidir...
-powershell -Command "$chars='|/-\\'; $i=0; while(-not [Console]::KeyAvailable) { [Console]::Write(\"`r Calisiyor... \" + $chars[$i++ %% $chars.Length]); Start-Sleep -Milliseconds 100 }; $null = [Console]::ReadKey($true)"taskkill /f /fi "windowtitle eq DocumentaryServer" /t >nul 2>&1
+echo [C/c] Kapatmak
+echo Sunucuyu istediginiz zaman kapatabilirsiniz... [C/c]
+color 0A
+powershell -Command "$chars='|/-\\'; $i=0; while($true) { if ([Console]::KeyAvailable) { $k = [Console]::ReadKey($true); if ($k.KeyChar -eq 'c' -or $k.KeyChar -eq 'C') { break } } [Console]::Write(\"`r Calisiyor... \" + $chars[$i++ %% $chars.Length]); Start-Sleep -Milliseconds 100 }"goto bsl
+taskkill /f /fi "windowtitle eq DocumentaryServer" /t >nul 2>&1
 goto bsl
