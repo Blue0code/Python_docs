@@ -21,6 +21,7 @@ echo #########   ########   ########   ########
 echo.
 pause
 :bsl
+cls
 color 0F
 echo.
 echo /.../
@@ -85,6 +86,6 @@ echo /.../
 echo [C/c] Kapatmak
 echo Sunucuyu istediginiz zaman kapatabilirsiniz... [C/c]
 color 0A
-powershell -Command "$chars='|/-\\'; $i=0; while($true) { if ([Console]::KeyAvailable) { $k = [Console]::ReadKey($true); if ($k.KeyChar -eq 'c' -or $k.KeyChar -eq 'C') { break } } [Console]::Write(\"`r Calisiyor... \" + $chars[$i++ %% $chars.Length]); Start-Sleep -Milliseconds 100 }"goto bsl
+powershell -Command "$chars='|//--\\||//--\\|'; $i=0; while($true) { if ([Console]::KeyAvailable) { $k = [Console]::ReadKey($true); if ($k.KeyChar -eq 'c' -or $k.KeyChar -eq 'C') { break } } [Console]::Write(\"`r Calisiyor... \" + $chars[$i++ %% $chars.Length]); Start-Sleep -Milliseconds 200 }"goto bsl
 taskkill /f /fi "windowtitle eq DocumentaryServer" /t >nul 2>&1
 goto bsl
