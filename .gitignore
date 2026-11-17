@@ -1,5 +1,7 @@
 *
 !*/
 !docs.bat
-!index.html
+!.index.html
 !.gitignore
+!README.md
+!Python Docs.lnk
