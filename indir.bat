@@ -49,8 +49,9 @@ echo [ %time% ] Kurmak istiyor musunuz? [Y/n] , soruldu >> "%iL%"
 echo.
 powershell Write-Host "[Y] Evet" -BackgroundColor DarkGreen -ForegroundColor White
 powershell Write-Host "[n] Hayir  [kapatmak istiyorum]" -BackgroundColor Black -ForegroundColor Red
-choice /c Yn /n /m "Kurmak istiyor musunuz? [Y/n]  "
+choice /c yn /n /m "Kurmak istiyor musunuz? [Y/n]  "
 if errorlevel 2 (
+    pause
     echo [ %time% ] Hayir  [kapatmak istiyorum] , secildi >> "%iL%"
     echo [ %time% ] Kapatmak istediginize emin misiniz? [N/y] , soruldu >> "%iL%"
     cls
@@ -58,6 +59,7 @@ if errorlevel 2 (
     powershell Write-Host " [y] Evet " -BackgroundColor Black -ForegroundColor Green
     choice /c Ny /n /m "Kapatmak istediginize emin misiniz? [N/y]  "
     if errorlevel 2 (
+        pause
         echo [ %time% ] Evet , secildi >> "%iL%"
         cls
         echo [ %time% ] Cikmak icin herhangi bir tusa basin... , soruldu >> "%iL%"
@@ -67,6 +69,7 @@ if errorlevel 2 (
         goto bts
     )
     if errorlevel 1 (
+        pause
         echo [ %time% ] Hayir , secildi >> "%iL%"
         cls
         echo [ %time% ] bsl , donuldu >> "%iL%"
@@ -74,18 +77,21 @@ if errorlevel 2 (
     )
 )
 if errorlevel 1 (
+    pause
     echo [ %time% ] Evet , secildi >> "%iL%"
     echo [ %time% ] Indirmek istediginize emin misiniz? (Y/n) , soruldu >> "%iL%"
     powershell Write-Host " [Y] Evet " -BackgroundColor Green -ForegroundColor White
     powershell Write-Host " [n] Hayir " -BackgroundColor Black -ForegroundColor Red
     choice /c Yn /n /m "Indirmek istediginize emin misiniz? [Y/n]  "
     if errorlevel 2 (
+        pause
         echo [ %time% ] Hayir , secildi >> "%iL%"
         cls
         echo [ %time% ] bsl , donuldu >> "%iL%"
         goto bsl
     )
     if errorlevel 1 (
+        pause
         echo [ %time% ] Evet , secildi >> "%iL%"
         cls
         echo [ %date%  %time% ] github.com as gK adresine 2000 ms 20 paket , ping >> "%iL%"
@@ -94,6 +100,7 @@ if errorlevel 1 (
         echo. >> "%iL%"
         ping %gK% -n 20 -w 2000 >> "%iL%"
         if errorlevel 1 (
+            pause
             echo. >> "%iL%"
             echo -------- pingClosed -------- >> "%iL%"
             echo. >> "%iL%"
@@ -106,6 +113,7 @@ if errorlevel 1 (
             echo [ %time% ] bsl , donuldu
             goto bsl
         ) else (
+            pause
             echo. >> "%iL%"
             echo -------- pingClosed -------- >> "%iL%"
             echo. >> "%iL%"
