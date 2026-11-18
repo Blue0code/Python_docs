@@ -48,7 +48,7 @@ echo [ %time% ] Kurmak istiyor musunuz? [Y/n] , soruldu >> "%iL%"
 :bsl
 echo.
 powershell Write-Host "[Y] Evet" -BackgroundColor DarkGreen -ForegroundColor White
-powershell Write-Host "[n] Hayir  [kapatmak istiyorum] )" -BackgroundColor Black -ForegroundColor Red
+powershell Write-Host "[n] Hayir  [kapatmak istiyorum]" -BackgroundColor Black -ForegroundColor Red
 choice /c Yn /n /m "Kurmak istiyor musunuz? [Y/n]  "
 if errorlevel 2 (
     echo [ %time% ] Hayir [ kapatmak istiyorum ] , secildi >> "%iL%"
