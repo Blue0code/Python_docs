@@ -1,2 +1,2 @@
 # Windows İçin İndirme Aracı
-Releases : 
+Release : [https://github.com/Blue0code/Python_docs/releases/tag/ren](tıklayınız...)
